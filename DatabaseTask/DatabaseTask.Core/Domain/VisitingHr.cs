@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DatabaseTask.Core.Domain
 {
-    internal class VisitingHr
+    public class VisitingHr
     {
         public int VisitingHrId { get; set; }
         public DateOnly StartDate { get; set; }

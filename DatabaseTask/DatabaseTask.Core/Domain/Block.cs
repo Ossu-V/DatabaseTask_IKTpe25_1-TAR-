@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DatabaseTask.Core.Domain
 {
-    internal class Block
+    public class Block
     {
         public int BlockId { get; set; }
         public int Number { get; set; }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DatabaseTask.Core.Domain
 {
-    internal class Shift
+    public class Shift
     {
         public int ShiftId { get; set; }
         public int GuardsId { get; set; }

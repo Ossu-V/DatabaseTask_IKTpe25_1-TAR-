@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DatabaseTask.Core.Domain
 {
-    internal class Prison
+    public class Prison
     {
         public int PrisonId { get; set; }
         public int Name { get; set; }

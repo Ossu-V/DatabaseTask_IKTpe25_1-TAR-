@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DatabaseTask.Core.Domain
 {
-    internal class Guests
+    public class Guests
     {
         public int GuestsId { get; set; }
         public int PersonalId { get; set; }

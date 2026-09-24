@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DatabaseTask.Core.Domain
 {
-    internal class Punishment
+    public class Punishment
     {
         public int PunishmentId { get; set; }
         public DateOnly StartDate { get; set; }
