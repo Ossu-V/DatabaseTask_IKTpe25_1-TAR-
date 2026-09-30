@@ -4,6 +4,7 @@ using DatabaseTask.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace DatabaseTask.Data.Migrations
 {
     [DbContext(typeof(DatabaseTaskDbContext))]
-    partial class DatabaseTaskDbContextModelSnapshot : ModelSnapshot
+    [Migration("20260930120057_Vangla ERD spell fix")]
+    partial class VanglaERDspellfix
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -29,9 +32,6 @@ namespace DatabaseTask.Data.Migrations
                         .HasColumnType("int");
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("BlockId"));
-
-                    b.Property<int>("ChamberId")
-                        .HasColumnType("int");
 
                     b.Property<string>("Name")
                         .IsRequired()
@@ -56,9 +56,6 @@ namespace DatabaseTask.Data.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ChamberId"));
 
-                    b.Property<int>("BlockId")
-                        .HasColumnType("int");
-
                     b.Property<int>("Capacity")
                         .HasColumnType("int");
 
@@ -66,12 +63,6 @@ namespace DatabaseTask.Data.Migrations
                         .HasColumnType("int");
 
                     b.Property<int>("Number")
-                        .HasColumnType("int");
-
-                    b.Property<int>("PrisonerId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("ShiftId")
                         .HasColumnType("int");
 
                     b.HasKey("ChamberId");
@@ -106,9 +97,6 @@ namespace DatabaseTask.Data.Migrations
                         .HasColumnType("int");
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("GuardId"));
-
-                    b.Property<DateOnly>("Date")
-                        .HasColumnType("date");
 
                     b.Property<DateOnly>("EndDate")
                         .HasColumnType("date");
@@ -146,10 +134,6 @@ namespace DatabaseTask.Data.Migrations
 
                     b.Property<int>("Phonenumber")
                         .HasColumnType("int");
-
-                    b.Property<string>("PrisonerId")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Relationship")
                         .IsRequired()
@@ -194,18 +178,12 @@ namespace DatabaseTask.Data.Migrations
                     b.Property<DateOnly>("ArrivalDate")
                         .HasColumnType("date");
 
-                    b.Property<int>("ChamberId")
-                        .HasColumnType("int");
-
                     b.Property<DateOnly>("DateOfBirth")
                         .HasColumnType("date");
 
                     b.Property<string>("FirstName")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("GuestId")
-                        .HasColumnType("int");
 
                     b.Property<string>("LastName")
                         .IsRequired()
@@ -257,12 +235,6 @@ namespace DatabaseTask.Data.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ShiftId"));
 
-                    b.Property<int>("ChamberId")
-                        .HasColumnType("int");
-
-                    b.Property<DateOnly>("Date")
-                        .HasColumnType("date");
-
                     b.Property<DateOnly>("EndDate")
                         .HasColumnType("date");
 
@@ -284,9 +256,6 @@ namespace DatabaseTask.Data.Migrations
                         .HasColumnType("int");
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("VisitingHrId"));
-
-                    b.Property<DateOnly>("Date")
-                        .HasColumnType("date");
 
                     b.Property<DateOnly>("EndDate")
                         .HasColumnType("date");

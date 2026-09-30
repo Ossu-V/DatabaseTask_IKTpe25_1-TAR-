@@ -4,6 +4,7 @@ using DatabaseTask.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace DatabaseTask.Data.Migrations
 {
     [DbContext(typeof(DatabaseTaskDbContext))]
-    partial class DatabaseTaskDbContextModelSnapshot : ModelSnapshot
+    [Migration("20260930115551_Vangla ERD fix")]
+    partial class VanglaERDfix
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -30,9 +33,6 @@ namespace DatabaseTask.Data.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("BlockId"));
 
-                    b.Property<int>("ChamberId")
-                        .HasColumnType("int");
-
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -45,7 +45,7 @@ namespace DatabaseTask.Data.Migrations
 
                     b.HasKey("BlockId");
 
-                    b.ToTable("Blocks");
+                    b.ToTable("Block");
                 });
 
             modelBuilder.Entity("DatabaseTask.Core.Domain.Chamber", b =>
@@ -56,9 +56,6 @@ namespace DatabaseTask.Data.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ChamberId"));
 
-                    b.Property<int>("BlockId")
-                        .HasColumnType("int");
-
                     b.Property<int>("Capacity")
                         .HasColumnType("int");
 
@@ -68,15 +65,9 @@ namespace DatabaseTask.Data.Migrations
                     b.Property<int>("Number")
                         .HasColumnType("int");
 
-                    b.Property<int>("PrisonerId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("ShiftId")
-                        .HasColumnType("int");
-
                     b.HasKey("ChamberId");
 
-                    b.ToTable("Chambers");
+                    b.ToTable("Chamber");
                 });
 
             modelBuilder.Entity("DatabaseTask.Core.Domain.Crime", b =>
@@ -96,19 +87,16 @@ namespace DatabaseTask.Data.Migrations
 
                     b.HasKey("CrimeId");
 
-                    b.ToTable("Crimes");
+                    b.ToTable("Crime");
                 });
 
-            modelBuilder.Entity("DatabaseTask.Core.Domain.Guard", b =>
+            modelBuilder.Entity("DatabaseTask.Core.Domain.Guards", b =>
                 {
-                    b.Property<int>("GuardId")
+                    b.Property<int>("GuardsId")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("GuardId"));
-
-                    b.Property<DateOnly>("Date")
-                        .HasColumnType("date");
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("GuardsId"));
 
                     b.Property<DateOnly>("EndDate")
                         .HasColumnType("date");
@@ -128,18 +116,18 @@ namespace DatabaseTask.Data.Migrations
                     b.Property<DateOnly>("StartDate")
                         .HasColumnType("date");
 
-                    b.HasKey("GuardId");
+                    b.HasKey("GuardsId");
 
                     b.ToTable("Guards");
                 });
 
-            modelBuilder.Entity("DatabaseTask.Core.Domain.Guest", b =>
+            modelBuilder.Entity("DatabaseTask.Core.Domain.Guests", b =>
                 {
-                    b.Property<int>("GuestId")
+                    b.Property<int>("GuestsId")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("GuestId"));
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("GuestsId"));
 
                     b.Property<int>("PersonalId")
                         .HasColumnType("int");
@@ -147,15 +135,11 @@ namespace DatabaseTask.Data.Migrations
                     b.Property<int>("Phonenumber")
                         .HasColumnType("int");
 
-                    b.Property<string>("PrisonerId")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<string>("Relationship")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.HasKey("GuestId");
+                    b.HasKey("GuestsId");
 
                     b.ToTable("Guests");
                 });
@@ -180,7 +164,7 @@ namespace DatabaseTask.Data.Migrations
 
                     b.HasKey("PrisonId");
 
-                    b.ToTable("Prisons");
+                    b.ToTable("Prison");
                 });
 
             modelBuilder.Entity("DatabaseTask.Core.Domain.Prisoner", b =>
@@ -194,18 +178,12 @@ namespace DatabaseTask.Data.Migrations
                     b.Property<DateOnly>("ArrivalDate")
                         .HasColumnType("date");
 
-                    b.Property<int>("ChamberId")
-                        .HasColumnType("int");
-
                     b.Property<DateOnly>("DateOfBirth")
                         .HasColumnType("date");
 
                     b.Property<string>("FirstName")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("GuestId")
-                        .HasColumnType("int");
 
                     b.Property<string>("LastName")
                         .IsRequired()
@@ -223,7 +201,7 @@ namespace DatabaseTask.Data.Migrations
 
                     b.HasKey("PrisonerId");
 
-                    b.ToTable("Prisoners");
+                    b.ToTable("Prisoner");
                 });
 
             modelBuilder.Entity("DatabaseTask.Core.Domain.Punishment", b =>
@@ -246,7 +224,7 @@ namespace DatabaseTask.Data.Migrations
 
                     b.HasKey("PunishmentId");
 
-                    b.ToTable("Punishments");
+                    b.ToTable("Punishment");
                 });
 
             modelBuilder.Entity("DatabaseTask.Core.Domain.Shift", b =>
@@ -256,12 +234,6 @@ namespace DatabaseTask.Data.Migrations
                         .HasColumnType("int");
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ShiftId"));
-
-                    b.Property<int>("ChamberId")
-                        .HasColumnType("int");
-
-                    b.Property<DateOnly>("Date")
-                        .HasColumnType("date");
 
                     b.Property<DateOnly>("EndDate")
                         .HasColumnType("date");
@@ -274,7 +246,7 @@ namespace DatabaseTask.Data.Migrations
 
                     b.HasKey("ShiftId");
 
-                    b.ToTable("Shifts");
+                    b.ToTable("Shift");
                 });
 
             modelBuilder.Entity("DatabaseTask.Core.Domain.VisitingHr", b =>
@@ -284,9 +256,6 @@ namespace DatabaseTask.Data.Migrations
                         .HasColumnType("int");
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("VisitingHrId"));
-
-                    b.Property<DateOnly>("Date")
-                        .HasColumnType("date");
 
                     b.Property<DateOnly>("EndDate")
                         .HasColumnType("date");
@@ -300,7 +269,7 @@ namespace DatabaseTask.Data.Migrations
 
                     b.HasKey("VisitingHrId");
 
-                    b.ToTable("VisitingHrs");
+                    b.ToTable("VisitingHr");
                 });
 #pragma warning restore 612, 618
         }

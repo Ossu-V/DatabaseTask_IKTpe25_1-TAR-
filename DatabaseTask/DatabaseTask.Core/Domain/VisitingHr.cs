@@ -12,5 +12,6 @@ namespace DatabaseTask.Core.Domain
         public DateOnly StartDate { get; set; }
         public DateOnly EndDate { get; set; }
         public string GuestStatus { get; set; }
+        public DateOnly Date { get; set; }
     }
 }

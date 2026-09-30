@@ -12,6 +12,8 @@ namespace DatabaseTask.Core.Domain
         public int GuardsId { get; set; }
         public DateOnly StarDate { get; set; }
         public DateOnly EndDate { get; set; }
+        public DateOnly Date { get; set; }
+        public int ChamberId { get; set; }
 
     }
 }

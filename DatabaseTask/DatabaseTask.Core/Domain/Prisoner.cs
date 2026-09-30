@@ -16,5 +16,7 @@ namespace DatabaseTask.Core.Domain
         public DateOnly ArrivalDate { get; set; }
         public DateOnly ReleaseDate { get; set; }
         public string Status { get; set; }
+        public int ChamberId { get; set; }
+        public int GuestId { get; set; }
     }
 }
