@@ -12,5 +12,8 @@ namespace DatabaseTask.Core.Domain
         public int Name { get; set; }
         public string Location { get; set; }
         public int Capacity { get; set; }
+
+        public ICollection<Block> Blocks { get; set; }
+        = new List<Block>();
     }
 }

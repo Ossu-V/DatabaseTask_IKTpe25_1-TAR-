@@ -13,5 +13,8 @@ namespace DatabaseTask.Core.Domain
         public string Name { get; set; }
         public int SecurtyLvl { get; set; }
         public int ChamberId { get; set; }
+
+        public int? PrisonId { get; set; }
+        public Prison? Prison { get; set; }
     }
 }
