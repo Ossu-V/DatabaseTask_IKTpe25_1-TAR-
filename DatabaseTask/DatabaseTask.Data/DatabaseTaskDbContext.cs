@@ -21,5 +21,6 @@ namespace DatabaseTask.Data
         public DbSet<Punishment> Punishments { get; set; }
         public DbSet<Shift> Shifts { get; set; }
         public DbSet<VisitingHr> VisitingHrs { get; set; }
+
     }
 }
