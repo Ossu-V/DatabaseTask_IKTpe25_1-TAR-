@@ -19,5 +19,7 @@ namespace DatabaseTask.Core.Domain
         public string Rating { get; set; }
         public string Description { get; set; }
         public int RoomCount { get; set; }
+
+        public ICollection<Employee> Employees { get; set; } = new List<Employee>();
     }
 }

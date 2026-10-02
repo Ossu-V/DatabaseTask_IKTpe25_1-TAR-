@@ -20,5 +20,8 @@ namespace DatabaseTask.Core.Domain
         public DateTime StartDate { get; set; }
         public DateTime EndDate { get; set; }
         public string PersonalId { get; set; }
+
+        public int? HotelId { get; set; }
+        public Hotel Hotel { get; set; }
     }
 }
