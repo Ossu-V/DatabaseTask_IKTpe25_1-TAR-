@@ -1,9 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace DatabaseTask.Core.Domain
 {
@@ -11,7 +8,12 @@ namespace DatabaseTask.Core.Domain
     {
         [Key]
         public Guid Id { get; set; }
-        public float Sum { get; set; }
+
+        public double Sum { get; set; }
         public DateTime Date { get; set; }
+
+        public Guid EmployeeId { get; set; }
+        [ForeignKey(nameof(EmployeeId))]
+        public Employee? Employee { get; set; }
     }
 }

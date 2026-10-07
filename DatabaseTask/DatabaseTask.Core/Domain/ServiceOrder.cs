@@ -1,9 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace DatabaseTask.Core.Domain
 {
@@ -13,6 +10,12 @@ namespace DatabaseTask.Core.Domain
         public Guid Id { get; set; }
         public DateTime Date { get; set; }
 
+        public Guid ServiceId { get; set; }
+        [ForeignKey(nameof(ServiceId))]
+        public Services? Service { get; set; }
 
+        public Guid BookingId { get; set; }
+        [ForeignKey(nameof(BookingId))]
+        public Booking? Booking { get; set; }
     }
 }
