@@ -11,7 +11,7 @@ namespace DatabaseTask.Data
 
         // näide, kuidas teha, kui lisate domaini alla ühe objekti
         // migratsioonid peavad tulema siia libary-sse e TARge20.Data alla.
-        public DbSet<Patient> Departments { get; set; }
+        public DbSet<Patient> Patients { get; set; }
         public DbSet<Doctor> Doctors { get; set; }
         public DbSet<Visits> Visits { get; set; }
         public DbSet<Examinations> Examinations { get; set; }
