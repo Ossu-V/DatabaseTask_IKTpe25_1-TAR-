@@ -13,5 +13,12 @@ namespace DatabaseTask.Core.Domain
         public int DoseFrequency { get; set; }
         public DateOnly StartDate { get; set; }
         public DateOnly EndDate { get; set; }
+
+        public Guid DoctorId { get; set; }
+        public Doctor Doctor { get; set; }
+
+        public Guid MedicationId { get; set; }
+        public Medications Medication { get; set; }
+
     }
 }

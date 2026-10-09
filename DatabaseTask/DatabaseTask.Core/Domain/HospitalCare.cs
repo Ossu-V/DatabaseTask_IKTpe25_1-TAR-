@@ -13,5 +13,12 @@ namespace DatabaseTask.Core.Domain
         public DateOnly DepartureDate { get; set; }
         public string Reason { get; set; }
 
+        public Guid PatientId { get; set; }
+        public Patient Patient { get; set; }
+
+        public Guid WardId { get; set; }
+        public Ward Ward { get; set; }
+
+
     }
 }

@@ -14,5 +14,15 @@ namespace DatabaseTask.Core.Domain
         public DateOnly DateOfBirth { get; set; }
         public int Tel { get; set; }
         public string Email { get; set; }
+
+        public Guid VisitId { get; set; }
+        public Visits Visit { get; set; }
+
+        public Guid HospitalCareId { get; set; }
+        public HospitalCare HospitalCare { get; set; }
+
+        public Guid MedicationId { get; set; }
+        public Medications Medication { get; set; }
+
     }
 }

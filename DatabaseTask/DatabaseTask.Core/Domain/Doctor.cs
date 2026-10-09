@@ -13,5 +13,18 @@ namespace DatabaseTask.Core.Domain
         public int EmployeeNr { get; set; }
         public int Tel { get; set; }
         public string Field { get; set; }
+
+        public Guid DepartmentId { get; set; }
+        public Department Department { get; set; }
+
+        public Guid VisitId { get; set; }
+        public Visits Visit { get; set; }
+
+        public Guid PrescribingMedicationId { get; set; }
+        public PrescribingMedication PrescribingMedication { get; set; }
+
+        public Guid ExaminationId { get; set; }
+        public Examinations Examination { get; set; }
+
     }
 }

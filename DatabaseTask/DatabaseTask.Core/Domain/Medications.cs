@@ -13,5 +13,12 @@ namespace DatabaseTask.Core.Domain
         public string ActiveIngredients { get; set; }
         public string Manufacturer { get; set; }
         public string Description { get; set; }
+
+        public Guid PatientId { get; set; }
+        public Patient Patient { get; set; }
+
+        public Guid PrescribingMedicationId { get; set; }
+        public PrescribingMedication PrescribingMedication { get; set; }
+
     }
 }

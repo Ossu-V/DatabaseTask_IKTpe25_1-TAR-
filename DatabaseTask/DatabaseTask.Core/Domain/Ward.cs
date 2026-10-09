@@ -12,5 +12,9 @@ namespace DatabaseTask.Core.Domain
         public int WardNr { get; set; }
         public int Floor { get; set; }
         public int BedŃr { get; set; }
+
+        public Guid HospitalCareId { get; set; }
+        public HospitalCare HospitalCare { get; set; }
+
     }
 }

@@ -12,5 +12,9 @@ namespace DatabaseTask.Core.Domain
         public string Name { get; set; }
         public int Floor { get; set; }
         public int Tel { get; set; }
+
+        public Guid DoctorId { get; set; }
+        public Doctor Doctor { get; set; }
+
     }
 }
