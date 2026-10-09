@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace DatabaseTask.Core.Domain
 {
-    public class Crime
+    public class PatientExamination
     {
-        public int CrimeId { get; set; }
-        public string Description { get; set; }
-        public int SeverityOfCrime { get; set; }
+        public Guid Id { get; set; }
+        public DateOnly ExaminationDate { get; set; }
+        public string Result { get; set; }
     }
 }

@@ -6,11 +6,12 @@ using System.Threading.Tasks;
 
 namespace DatabaseTask.Core.Domain
 {
-    public class Punishment
+    public class PrescribingMedication
     {
-        public int PunishmentId { get; set; }
+        public Guid Id { get; set; }
+        public int Dose { get; set; }
+        public int DoseFrequency { get; set; }
         public DateOnly StartDate { get; set; }
         public DateOnly EndDate { get; set; }
-        public string TypeOfPunishment { get; set; }
     }
 }
